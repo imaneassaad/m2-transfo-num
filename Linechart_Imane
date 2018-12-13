@@ -1,0 +1,31 @@
+<h1> Proportion of people killed by Terrorist attacks </h1>
+
+  <div id="vis3"> </div>
+
+  <script>
+
+
+
+  var vlSpec1 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+
+  "width": 800,
+
+  "description": "Proportion of people killed by Terrorist attacks",
+
+  "data": {"url": "https://raw.githubusercontent.com/imaneassaad/DataVizu/master/Number of killed.csv", "format": { "type": "dsv", "delimiter": ";" }},
+
+  "mark": "line",
+
+  "encoding": {
+    "x": {"timeUnit": "year", "field": "Year", "type": "temporal"},
+
+    "y": {"field": "Number of killed", "type": "quantitative"},
+
+    "color": {"field": "target", "type": "nominal"}
+  }
+}
+
+vegaEmbed("#vis3", vlSpec1);
+
+  </script>
